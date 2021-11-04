@@ -1,0 +1,9 @@
+{% extends "newsapp/base.html" %}
+
+{% block content %}
+  <ul>
+		{% for trending_news in trending_news_list %}
+    <li><a href="{% url 'newsapp:news_article_detail' trending_news.id %}">{{ trending_news.title }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}

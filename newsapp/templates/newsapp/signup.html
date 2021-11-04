@@ -1,0 +1,57 @@
+{% extends "newsapp/base.html" %}
+
+{% load static %}
+
+{% block moreRef %}
+<script src="{% static 'newsapp/ajax_form.js' %}"></script>
+<link rel="stylesheet" href="{% static 'newsapp/form.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="signup_status">
+	
+</div>
+<form method="post" id="signup_form">
+	{% csrf_token %}
+	
+	<fieldset id="personalia">
+		<legend>Personalia:</legend>
+		<label for="fname">First name:</label>
+		<input type="text" id="fname" name="fname">
+		<label for="lname">Last name:</label>
+		<input type="text" id="lname" name="lname">
+		<label for="username">Username:</label>
+		<input type="text" name="username">
+		<label for="password">Password:</label>
+		<input type="password" name="password">
+	</fieldset>
+	<!-- <fieldset>
+		<legend>Affiliation:</legend>
+		<label for="college">College:</label>
+		<input list="college-names" id="college" name="college">
+		<datalist id="college-names">
+			<option value="College of Agriculture">
+			<option value="College of Education">
+			<option value="College of Engineering">
+			<option value="Exploratory Studies">
+			<option value="College of Health and Human Sciences">
+			<option value="College of Liberal Arts">
+			<option value="Krannert School of Management">
+			<option value="College of Pharmacy">
+			<option value="Purdue Polytechnic Institute">
+			<option value="College of Science">
+			<option value="College of Veterinary Medicine">
+			<option value="Honors College">
+			<option value="The Graduate School">
+		</datalist>
+	</fieldset>
+	<label for="news-category">Choose your interested news categories:</label><br>
+	<select id="news-category" name="news-category" multiple>
+		<option value="research">Research</option>
+		<option value="teaching_and_learning">Teaching and Learning</option>
+		<option value="sports">Sports</option>
+		<option value="benefits">Benefits</option>
+	</select> -->
+	<input id="signup_submit" type="button" value="Submit">
+</form>
+{% endblock %}

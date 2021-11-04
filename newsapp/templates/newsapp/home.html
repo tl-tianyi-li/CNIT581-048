@@ -1,0 +1,37 @@
+{% extends "newsapp/base.html" %}
+
+{% load static %}
+
+
+{% block moreRef %}
+<script src="{% static 'newsapp/ajax_demo.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div id="content">
+        <div class="left-column">
+            <div class="article-container">
+                <h3>Featured Today</h3>
+                <img id="tmp-loading-img" src="{% static 'newsapp/img/example.gif' %}" alt="this should be a picture for the news article..." style="width: 200px; height: auto;">
+                <p id="example-p">{{featured_today_news}}</p>
+                <div><i class="far fa-thumbs-up"></i><span>0</span></div>
+            </div>
+        </div>
+        <div class="mid-column">
+        {% for featured_news in featured_news_list %}
+            <div class="article-container">
+                <h4>{{ featured_news.title }}</h4>
+                <p><img src="{{ featured_news.img }}">{{ featured_news.content }}</p>
+                <div><i class="far fa-thumbs-up"></i><span>{{ featured_news.likes }}</span></div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="right-column">
+            <a class="twitter-timeline" href="https://twitter.com/LifeAtPurdue?ref_src=twsrc%5Etfw">Tweets by LifeAtPurdue</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="right-column-small">
+            <a href="https://twitter.com/LifeAtPurdue?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @LifeAtPurdue</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+{% endblock %}
