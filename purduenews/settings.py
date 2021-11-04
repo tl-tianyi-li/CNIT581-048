@@ -28,7 +28,6 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ["arcane-dawn-30164.herokuapp.com", "localhost"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
