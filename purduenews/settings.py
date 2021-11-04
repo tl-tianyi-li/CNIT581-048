@@ -26,7 +26,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ["https://arcane-dawn-30164.herokuapp.com/", "http://localhost:8000/"]
+ALLOWED_HOSTS = ["arcane-dawn-30164.herokuapp.com", "localhost"]
 
 
 # Application definition
